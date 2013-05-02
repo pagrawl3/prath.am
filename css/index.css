@@ -1198,6 +1198,16 @@
     margin-bottom: -60px !important;
     margin-top: -70px !important;
   }
+  .contact-text {
+    font-size: 28px !important;
+    margin-top: 10px !important;
+  }
+  .pricing-table .title span {
+    font-size: 22px !important;
+  }
+  .pricing-table .bullet-item span {
+    font-size: 20px !important;
+  }
 }
 @media only screen and (min-width: 100px) {
   .fluid {
@@ -1562,7 +1572,6 @@ body .misc .misc-tables {
   padding-bottom: 75px;
 }
 body .misc .misc-tables li {
-  height: 50px;
   line-height: 50px;
   font-family: bitter;
   font-size: 18px;
