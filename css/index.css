@@ -1,4 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Great+Vibes);
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,100italic);
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 @charset 'UTF-8';
 @font-face {
   font-family: 'zocial';
@@ -1208,10 +1212,23 @@
   .pricing-table .bullet-item span {
     font-size: 20px !important;
   }
+  .menu .name {
+    margin-bottom: 0px !important;
+  }
+  .menu .name:last-child {
+    margin-bottom: 50px !important;
+  }
 }
 @media only screen and (min-width: 100px) {
   .fluid {
     max-width: 90% !important;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .landing .logo {
+    background: url(../img/landing/landing_logo_75p.png) !important;
+    width: 417px !important;
+    height: 198px !important;
   }
 }
 .info-button {
@@ -1238,6 +1255,12 @@
 .info-button span {
   font-size: 16px;
   color: #fff;
+}
+a:link {
+  color: #000;
+}
+a:visited {
+  color: #000;
 }
 body {
   background-color: #fff;
@@ -1587,6 +1610,8 @@ body .cta-section {
   background: #77c4d3;
 }
 body .cta-section .cta-row .title-text {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
   display: inline-block;
   font-size: 32px;
   color: #fff;
@@ -1594,9 +1619,12 @@ body .cta-section .cta-row .title-text {
   text-align: center;
 }
 body .cta-section .cta-row .p-text {
+  font-family: 'Open Sans', sans-serif;
   font-size: 26px;
 }
 body .cta-section .cta-row .contact-text {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
   white-space: nowrap;
   display: inline-block;
   font-size: 32px;
@@ -1604,6 +1632,9 @@ body .cta-section .cta-row .contact-text {
   text-align: center;
   margin-top: 16px;
   margin-bottom: 32px;
+}
+body .cta-section .cta-row .contact-text.mail {
+  font-weight: 400;
 }
 body .cta-section .cta-row .contact-text a {
   -webkit-transition: 0.2s ease-out;
@@ -1645,5 +1676,208 @@ body .footer .icon:hover {
 }
 body .footer .copyright {
   font-size: 18px;
+  color: #fff;
+}
+.landing p {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  line-height: 40px;
+  color: #333745;
+  font-size: 35px;
+  margin-top: 32px;
+}
+.landing .body {
+  position: relative;
+  background: url(../img/landing/bg_full.png) fixed;
+  background-attachment: fixed;
+}
+.landing .header-logo .logo {
+  position: relative;
+  display: inline-block;
+  background: url(../img/landing/landing_logo_full.png);
+  width: 556px;
+  height: 264px;
+  margin-top: 90px;
+}
+.landing .header-logo .logo-name {
+  position: relative;
+  display: inline-block;
+  margin-top: 56px;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 66px;
+  color: #fff;
+}
+.landing .header-logo .twit {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 28px;
+  color: #fff;
+  line-height: 32px;
+  -webkit-transition: 0.2s ease-out;
+}
+.landing .header-logo .twit:hover {
+  color: #f6f792;
+}
+.landing hr {
+  position: relative;
+  display: inline-block;
+  width: 70%;
+  margin-top: 38px;
+  margin-bottom: 38px;
+}
+.landing .menu-item {
+  cursor: pointer;
+}
+.landing .menu-item .menu-logo {
+  display: inline-block;
+  width: 180px;
+  height: 180px;
+}
+.landing .menu-item .menu-logo.work {
+  background: url(../img/landing/work.png);
+}
+.landing .menu-item .menu-logo.blog {
+  background: url(../img/landing/blog.png);
+}
+.landing .menu-item .menu-logo.resume {
+  background: url(../img/landing/resume.png);
+}
+.landing .menu-item .name {
+  display: inline-block;
+  width: 150px;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 80px;
+  -webkit-transition: 0.1s ease-out;
+}
+.landing .menu-item:hover .name {
+  background-color: #333745;
+  color: #fff;
+}
+.landing .recent-section {
+  background: url(../img/bg_sect_blur_bigger.jpg);
+  background-attachment: fixed;
+}
+.landing .recent-section .header-text {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+  font-size: 42px;
+  color: #fff;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+.landing .recent-section .post {
+  padding: 40px 40px 20px 40px;
+  border: 2px solid #fff;
+  margin-bottom: 60px;
+}
+.landing .recent-section .post .highlighted-text {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 300;
+  font-size: 32px;
+  color: #000;
+  background: #fff;
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.landing .recent-section .post .icon-link {
+  display: inline-block;
+  width: 246px;
+  height: 96px;
+  margin: 30px 0 0px 0;
+  background: url(../img/landing/drib-connect.png);
+}
+.landing .recent-section .post p {
+  color: #fff;
+  font-size: 28px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+.landing .recent-section .post .icon {
+  display: inline-block;
+  color: #fff;
+  font-size: 52px;
+  margin: 0 25px 0 25px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-out;
+}
+.landing .recent-section .post .icon:hover {
+  color: #f6f792;
+}
+.head {
+  width: 100%;
+  background-color: #ecf0f1;
+}
+.head .logoC {
+  display: inline-block;
+}
+.head .logo {
+  display: inline-block;
+  width: 128px;
+  height: 128px;
+  background: url(../img/logo/logo_128.png) no-repeat;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.head .curr {
+  background: #77c4d3;
+}
+.head .nonCurr {
+  cursor: pointer;
+}
+.head .menu-item {
+  display: inline-block;
+  height: 80px;
+  width: 87px;
+  background: #abc;
+  margin-top: 25px;
+  margin-bottom: 3px;
+}
+.head .menu-item.work {
+  background: url(../img/portfolio.png) no-repeat;
+}
+.head .menu-item.blog {
+  background: url(../img/blog.png) 0px 5px no-repeat;
+}
+.head .menu-item.resume {
+  background: url(../img/resume.png) 0px 0px no-repeat;
+}
+.head .menu-name {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  line-height: 24px;
+  margin-bottom: 14px;
+}
+.work .body {
+  background: url(../img/bg_sect_blur_bigger.jpg);
+  height: 1000px;
+  position: relative;
+}
+.work .body span {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 50px;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  margin-top: 100px;
   color: #fff;
 }

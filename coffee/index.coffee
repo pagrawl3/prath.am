@@ -16,3 +16,23 @@ $(document).ready $ ->
 		experience = $(this).attr 'experience'
 		$(this).css background: 'url(img/'+imageName+') no-repeat 18px 13px'
 		$(this).html(experience)
+
+	$('.landing').stellar
+		horizontalScrolling: false, verticalOffset: 40, responsive: true
+
+	$('.body').stellar
+		horizontalScrolling: false, verticalOffset: 40, responsive: true
+
+	$('.menu-item').hover(
+		-> TweenLite.to $(this).children(".menu-logo"), 0.3, 
+		 		scaleX:1.08,scaleY:1.08, ease:"Power4.easeOut"
+		-> TweenLite.to $(this).children(".menu-logo"), 0.2, 
+		 		scaleX:1,scaleY:1
+	)
+
+	$('.nonCurr').hover(
+		->	TweenLite.to $(this).children(".menu-item"), 0.3, 
+		 		scaleX:1.08,scaleY:1.08, ease:"Power4.easeOut"
+		-> 	TweenLite.to $(this).children(".menu-item"), 0.2, 
+	 			scaleX:1,scaleY:1
+	)

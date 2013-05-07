@@ -1,5 +1,8 @@
 //LESS file. Needs to compiled to ../css/index.css before it can be used.
 @import url(http://fonts.googleapis.com/css?family=Great+Vibes);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,100italic);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
 @import url(http://weloveiconfonts.com/api/?family=zocial);
 @import url(http://weloveiconfonts.com/api/?family=entypo);
 
@@ -60,12 +63,32 @@
 			}
 		}
 	}
+
+	.menu .name {
+		margin-bottom: 0px !important;
+		//border-bottom: 1px solid rgba(1,1,1,0.1) !important;
+		&:last-child {
+			margin-bottom: 50px !important;
+		}
+	}
+	// .menu {margin-bottom: 40px;}
 }
 
 @media only screen and (min-width: 100px) {
 	.fluid {
 		max-width: 90% !important;
 	}
+}
+
+@media only screen and (max-width: 500px) {
+	.landing .logo {
+		//position: relative;
+		//display: inline-block;
+		background: url(../img/landing/landing_logo_75p.png) !important;
+		width: 417px !important;
+		height: 198px !important;
+	}
+
 }
 
 .info-button {
@@ -92,6 +115,11 @@
 		font-size: 16px;
 		color: #fff;
 	}
+}
+
+a {
+	&:link {color: #000;}
+	&:visited {color: #000;}
 }
 
 body {
@@ -461,6 +489,8 @@ body {
 		background: #77c4d3;//#df6174;
 		.cta-row {
 			.title-text {
+				font-family: 'Lato', sans-serif;
+				font-weight: 300;
 				display: inline-block;
 				font-size: 32px;
 				color: #fff;
@@ -468,9 +498,13 @@ body {
 				text-align: center;
 			}
 			.p-text {
+				font-family: 'Open Sans', sans-serif;
 				font-size: 26px;
 			}
 			.contact-text {
+				font-family: 'Lato', sans-serif;
+				font-weight: 300;
+				&.mail {font-weight: 400;}
 				white-space: nowrap;
 				display: inline-block;
 				font-size: 32px;
@@ -529,5 +563,224 @@ body {
 			color: #fff;
 		}
 	}
+}
 
+
+
+.landing {
+	p {
+		display: inline-block;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		-webkit-font-smoothing: antialiased;
+		line-height: 40px;
+		color: #333745;
+		font-size: 35px;
+		margin-top: 32px;
+	}
+
+	.body {
+		position: relative;
+		background: url(../img/landing/bg_full.png) fixed;
+		background-attachment: fixed;
+		// height: 600px;
+	}
+	.header-logo {
+		.logo {
+			position: relative;
+			display: inline-block;
+			background: url(../img/landing/landing_logo_full.png);
+			width: 556px;
+			height: 264px;
+			margin-top: 90px;
+		}
+		.logo-name {
+			position: relative;
+			display: inline-block;
+			margin-top: 56px;
+			text-align: center;
+			font-family: 'Lato', sans-serif;
+			font-weight: 300;
+			font-size: 66px;
+			color: #fff;
+		}
+
+		.twit {
+			font-family: 'Open Sans', sans-serif;
+			-webkit-font-smoothing: antialiased;
+			font-size: 28px;
+			color: #fff;
+			line-height: 32px;
+			-webkit-transition: 0.2s ease-out;
+			&:hover {
+				color: #f6f792;
+			}
+		}
+	}
+	hr {
+		position: relative;
+		display: inline-block;
+		width: 70%;
+		margin-top: 38px;
+		margin-bottom: 38px;
+	}
+
+
+	.menu-item {
+		cursor: pointer;
+		.menu-logo {
+			display: inline-block;
+			width: 180px;
+			height: 180px;
+			// margin-top: 100px;
+			// background-color: #fff;
+			&.work {background: url(../img/landing/work.png);}
+			&.blog {background: url(../img/landing/blog.png);}
+			&.resume {background: url(../img/landing/resume.png);}
+		}
+		.name {
+			display: inline-block;
+			width: 150px;
+			border-radius: 5px;
+			font-family: 'Lato', sans-serif;
+			font-weight: 300;
+			font-size: 32px;
+			text-align: center;
+			margin-bottom: 80px;
+			-webkit-transition: 0.1s ease-out;
+		}
+		&:hover {
+			.name{ 
+				background-color: #333745;
+				color: #fff;
+			}
+		}
+	}
+
+	.recent-section {
+		background: url(../img/bg_sect_blur_bigger.jpg);
+		background-attachment: fixed;
+
+		.header-text {
+			display: inline-block;
+			font-family: 'Lato', sans-serif;
+			-webkit-font-smoothing: antialiased;
+			font-weight: 300;
+			font-size: 42px;
+			color: #fff;
+			text-align: center;
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+
+		.post {
+			padding: 40px 40px 20px 40px;
+			//height: 400px;
+			border: 2px solid #fff;
+			margin-bottom: 60px;
+
+			.highlighted-text {
+				display: inline-block;
+				font-family: 'Lato', sans-serif;
+				-webkit-font-smoothing: antialiased;
+				font-weight: 300;
+				font-size: 32px;
+				color: #000;
+				background: #fff;
+				padding:10px 10px 10px 10px;
+				margin-bottom: 10px;
+				text-align: center;
+			}
+			.icon-link {
+				display: inline-block;
+				width: 246px;
+				height: 96px;
+				margin: 30px 0 0px 0;
+				background: url(../img/landing/drib-connect.png);
+			}
+
+			p {
+				color: #fff;
+				font-size: 28px;
+				font-family: "Open Sans", sans-serif;
+				font-weight: 400;
+				// text-align: left;
+			}
+
+			.icon {
+				display: inline-block;
+				color: #fff;
+				font-size: 52px;
+				margin: 0 25px 0 25px;
+				text-align: center;
+				cursor: pointer;
+				-webkit-transition: 0.2s ease-out;
+
+				&:hover {
+					color: #f6f792;
+				}
+			}
+		} 
+	}
+}
+
+.head {
+	width: 100%;
+	background-color: #ecf0f1;
+	.logoC {display: inline-block;}
+	.logo {
+		display: inline-block;
+		width: 128px;
+		height: 128px;
+		background: url(../img/logo/logo_128.png) no-repeat;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.curr {
+		background: #77c4d3;
+	}
+	.nonCurr {
+		// background: #ecf0f1;
+		cursor: pointer;
+	}
+	.menu-item {
+		//width: 100px;
+		display: inline-block;
+		height: 80px;
+		width: 87px;
+		background: #abc;
+		margin-top: 25px;
+		margin-bottom: 3px;
+		&.work {background: url(../img/portfolio.png) no-repeat;}
+		&.blog {background: url(../img/blog.png) 0px 5px no-repeat;}
+		&.resume {background: url(../img/resume.png) 0px 0px no-repeat;}
+	}
+	.menu-name {
+		display: inline-block;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		font-size: 20px;
+		-webkit-font-smoothing: antialiased;
+		text-align: center;
+		line-height: 24px;
+		margin-bottom: 14px;
+	}
+}
+.work {
+	.body {
+		background: url(../img/bg_sect_blur_bigger.jpg);
+		height: 1000px;
+		position: relative;
+		
+		span {
+			display: inline-block;
+			font-family: 'Lato', sans-serif;
+			font-weight: 300;
+			font-size: 50px;
+			-webkit-font-smoothing: antialiased;
+			text-align: center;
+			margin-top: 100px;
+			color: #fff;
+		}
+	}
 }
