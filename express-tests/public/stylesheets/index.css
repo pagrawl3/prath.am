@@ -1226,8 +1226,8 @@
 }
 @media only screen and (max-width: 500px) {
   .landing .logo {
-    background: url(../img/landing/landing_logo_75p.png) !important;
-    width: 417px !important;
+    background: url(../img/landing/landing_logo_75p.png) no-repeat !important;
+    width: 198px !important;
     height: 198px !important;
   }
 }
@@ -1415,10 +1415,10 @@ body .white .section-descrip:after {
 body .white .grad-overlay {
   content: "Hello";
   z-index: 5;
-  right: 15px;
+  right: 0px;
   position: absolute;
   width: 100px;
-  height: 400px;
+  height: 420px;
   margin-top: -30px;
   background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 30%, rgba(255, 255, 255, 0.75) 42%, #ffffff 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(30%, rgba(255, 255, 255, 0.7)), color-stop(42%, rgba(255, 255, 255, 0.75)), color-stop(100%, #ffffff));
