@@ -1,5 +1,5 @@
 $(document).ready $ ->
-
+	loadedIndex = false
 	browser = BrowserDetect.browser
 	height = $('.page-overlay').height()
 	# console.log height
@@ -18,7 +18,7 @@ $(document).ready $ ->
 	else
 		data = $('.page-overlay').html()
 	if browser!="Safari"
-		History.pushState {
+		History.replaceState {
 				title	: origTitle,
 				url		: origURL,
 				data	: $('.container').html()
@@ -30,11 +30,15 @@ $(document).ready $ ->
 			console.log currURL
 			exec = ->
 				currURL = window.location.pathname
-				updateContent State.data.data, State.data.title, State.data.url
+				getPage(currURL+'_fetch')
+				# updateContent State.data.data, State.data.title, State.data.url
 			if (State.data.url == '/')
 				console.log "going in"
-				TweenLite.to $('.page-overlay'), 0.6,
-					top: $(window).height() , ease:"Power2.easeOut"
+				if loadedIndex
+					TweenLite.to $('.page-overlay'), 0.6,
+						top: $(window).height() , ease:"Power2.easeOut"
+				else
+					exec()
 			else if currURL == '/'
 				console.log("executing")
 				TweenLite.to $('.page-overlay'), 0.6,
@@ -68,8 +72,12 @@ $(document).ready $ ->
 		pageurl = $(this).attr('href')
 		# $('body').css background: '#000'
 		if browser!='Safari'
+			loadedIndex = true
 			getPage(pageurl+'_fetch')
 			return false
+
+	$('body').on 'click', '.info-button', ->
+		window.location.href = '/404'
 
 Refresh = ->
 	$('.experience').each ->
@@ -82,16 +90,22 @@ Refresh = ->
 		$(this).css background: 'url(img/'+imageName+')'
 
 getPage = (url) ->
-	console.log url
+	console.log "URL"+url
 	request = $.get url
 	request.success (data) ->
 		# $('.page-overlay').css({'top':0})
 		# callback = ->
 		#	TweenLite.to $('.page-overlay'), 0.3,
 		#		top: 0, ease:"Power4.easeOut"
-		TweenLite.to $('.page-overlay'), 0.6,
-			top: 0, ease:"Power2.easeOut"#, onComplete:callback
-		updateContent(data.data, url.charAt(1).toUpperCase() + url.slice(0,"_fetch".length*-1).slice(2), url.slice(0,"_fetch".length*-1))
+		if (url!='/_fetch')
+			TweenLite.to $('.page-overlay'), 0.6,
+				top: 0, ease:"Power2.easeOut"#, onComplete:callback
+			updateContent(data.data, url.charAt(1).toUpperCase() + url.slice(0,"_fetch".length*-1).slice(2), url.slice(0,"_fetch".length*-1))
+		else
+			callback = ->
+				updateContent(data.data, 'Pratham Agrawal', '/')
+			TweenLite.to $('.page-overlay'), 0.6,
+					top: $(window).height() , ease:"Power2.easeOut", onComplete:callback
 
 updateContent = (data, title, url) ->
 	if (data==null)

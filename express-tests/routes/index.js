@@ -15,6 +15,34 @@ exports.blog_compiled = function(req, res){
 	res.render('blog_compiled', { title: 'Hello World!' });
 };
 
+exports.work_compiled = function(req, res){
+	res.render('blog_compiled', { title: 'Hello World!' });
+};
+
+exports.blog = function(req, res){
+	var pathToTemplate = require('path').resolve(__dirname, '../views') + '/blog.jade';
+	var jade = require('jade');
+	var template = require('fs').readFileSync(pathToTemplate, 'utf8');
+	var jadeFn = jade.compile(template, { filename: pathToTemplate, pretty: true });
+	var renderedTemplate = jadeFn();
+	res.send({
+		"success"	: true,
+		"data"		: renderedTemplate
+	});
+};
+
+exports.work = function(req, res){
+	var pathToTemplate = require('path').resolve(__dirname, '../views') + '/work.jade';
+	var jade = require('jade');
+	var template = require('fs').readFileSync(pathToTemplate, 'utf8');
+	var jadeFn = jade.compile(template, { filename: pathToTemplate, pretty: true });
+	var renderedTemplate = jadeFn();
+	res.send({
+		"success"	: true,
+		"data"		: renderedTemplate
+	});
+};
+
 exports.index = function(req, res){
 	var pathToTemplate = require('path').resolve(__dirname, '../views') + '/index.jade';
 	var jade = require('jade');

@@ -33,12 +33,14 @@ app.use(function(req, res, next) {
 
 app.get('/', routes.index_compiled);
 app.get('/_fetch', routes.index);
+app.get('/work', routes.work_compiled);
+app.get('/work_fetch', routes.work);
 app.get('/blog', routes.blog_compiled);
 app.get('/blog_fetch', routes.blog);
 app.get('/resume', routes.resume_compiled);
 app.get('/resume_fetch', routes.resume);
-// app.get('/work', routes.work);
-app.get('/home', routes.index_compiled);
+app.get('/work', routes.work);
+app.get('/undefined_fetch', routes.blog);
 
 
 http.createServer(app).listen(app.get('port'), function(){

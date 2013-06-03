@@ -3,7 +3,8 @@
   var Refresh, getPage, updateContent;
 
   $(document).ready($(function() {
-    var browser, currURL, data, height, origTitle, origURL;
+    var browser, currURL, data, height, loadedIndex, origTitle, origURL;
+    loadedIndex = false;
     browser = BrowserDetect.browser;
     height = $('.page-overlay').height();
     origTitle = document.title;
@@ -26,7 +27,7 @@
       data = $('.page-overlay').html();
     }
     if (browser !== "Safari") {
-      History.pushState({
+      History.replaceState({
         title: origTitle,
         url: origURL,
         data: $('.container').html()
@@ -37,14 +38,18 @@
         console.log(currURL);
         exec = function() {
           currURL = window.location.pathname;
-          return updateContent(State.data.data, State.data.title, State.data.url);
+          return getPage(currURL + '_fetch');
         };
         if (State.data.url === '/') {
           console.log("going in");
-          return TweenLite.to($('.page-overlay'), 0.6, {
-            top: $(window).height(),
-            ease: "Power2.easeOut"
-          });
+          if (loadedIndex) {
+            return TweenLite.to($('.page-overlay'), 0.6, {
+              top: $(window).height(),
+              ease: "Power2.easeOut"
+            });
+          } else {
+            return exec();
+          }
         } else if (currURL === '/') {
           console.log("executing");
           return TweenLite.to($('.page-overlay'), 0.6, {
@@ -88,13 +93,17 @@
         scaleY: 1
       });
     });
-    return $('body').on('click', '.menu_cta', function() {
+    $('body').on('click', '.menu_cta', function() {
       var pageurl;
       pageurl = $(this).attr('href');
       if (browser !== 'Safari') {
+        loadedIndex = true;
         getPage(pageurl + '_fetch');
         return false;
       }
+    });
+    return $('body').on('click', '.info-button', function() {
+      return window.location.href = '/404';
     });
   }));
 
@@ -119,14 +128,26 @@
 
   getPage = function(url) {
     var request;
-    console.log(url);
+    console.log("URL" + url);
     request = $.get(url);
     return request.success(function(data) {
-      TweenLite.to($('.page-overlay'), 0.6, {
-        top: 0,
-        ease: "Power2.easeOut"
-      });
-      return updateContent(data.data, url.charAt(1).toUpperCase() + url.slice(0, "_fetch".length * -1).slice(2), url.slice(0, "_fetch".length * -1));
+      var callback;
+      if (url !== '/_fetch') {
+        TweenLite.to($('.page-overlay'), 0.6, {
+          top: 0,
+          ease: "Power2.easeOut"
+        });
+        return updateContent(data.data, url.charAt(1).toUpperCase() + url.slice(0, "_fetch".length * -1).slice(2), url.slice(0, "_fetch".length * -1));
+      } else {
+        callback = function() {
+          return updateContent(data.data, 'Pratham Agrawal', '/');
+        };
+        return TweenLite.to($('.page-overlay'), 0.6, {
+          top: $(window).height(),
+          ease: "Power2.easeOut",
+          onComplete: callback
+        });
+      }
     });
   };
 
