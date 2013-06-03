@@ -1,0 +1,74 @@
+!!! 5
+html(lang="en")
+	head
+
+		//::::Google Analytics:::::
+		script.
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-40615706-1', 'prath.am');
+			ga('send', 'pageview');
+
+		meta(charset="utf-8")
+		//Set the viewport width to device width for mobile
+		meta(name="viewport", content="width=device-width")
+
+		title Pratham Agrawal
+		//if lt IE
+			link(rel="shortcut icon", href="favicon.ico")
+		link(rel="icon", type="image/png", href="favicon.png")
+
+		//:::::::-STYLESHEETS-::::::::
+		//Foundation CSS for Bootstrapping
+		link(rel="stylesheet", href="/stylesheets/foundation.min.css")
+		//Main website CSS file
+		link(rel="stylesheet", href="/stylesheets/index.css")
+		//Foundation stuff
+		link(rel="stylesheet", href="/stylesheets/normalize.css")
+
+		//::::::::::-JAVASCRIPT FRAMEWORKS-::::::::::
+		//__JQuery
+		script(src="javascripts/jquery-1.9.1.min.js")
+		//__JQuery UI for UI Elements
+		script(src="http://code.jquery.com/ui/1.10.0/jquery-ui.js")
+		//__Dynamic and responsive text resizing
+		script(src="javascripts/jquery.fittext.js")
+		//__Animating color effects in Jquery
+		script(src="javascripts/jquery.color-2.1.1.min.js")
+		//- //__Parallax plugin for JQ
+		//- script(src="javascripts/jquery.stellar.min.js")
+		//__Greensock animation framework for faster animations
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.9.5/TweenMax.min.js")
+		//__History.JS for html5 push state support
+		script(src="javascripts/jquery.history.js")
+		//__Broswer detection
+		script(src="javascripts/browser.js")
+
+		//::::::::::-FOUNDATION JS FILES-::::::::::
+		//__Main Foundation js include
+		script(src="/javascripts/foundation/foundation.js")
+		//__Foundation additional scripts
+			script(src="/javascripts/foundation/foundation.tooltips.js")
+			script(src="/javascripts/foundation/foundation.alerts.js")
+			script(src="/javascripts/foundation/foundation.clearing.js")
+			script(src="/javascripts/foundation/foundation.cookie.js")
+			script(src="/javascripts/foundation/foundation.dropdown.js")
+			script(src="/javascripts/foundation/foundation.forms.js")
+			script(src="/javascripts/foundation/foundation.joyride.js")
+			script(src="/javascripts/foundation/foundation.magellan.js")
+			script(src="/javascripts/foundation/foundation.orbit.js")
+			script(src="/javascripts/foundation/foundation.placeholder.js")
+			script(src="/javascripts/foundation/foundation.reveal.js")
+			script(src="/javascripts/foundation/foundation.section.js")
+			script(src="/javascripts/foundation/foundation.topbar.js")
+
+		//::::::::::-MAIN JS FILE-::::::::::
+		//__Personal JS File for the actual implementation
+		script(src="/javascripts/index.js")
+
+		//IE Fix for HTML5 Tags
+		//if lt IE 9
+			script (src="http://html5shiv.googlecode.com/svn/trunk/html5.js")
