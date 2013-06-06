@@ -1633,14 +1633,14 @@ body .misc .misc-tables li:nth-child(odd) {
 }
 body .cta-section {
   width: 100%;
-  background: #FFF;
+  background: #222;
 }
 body .cta-section .cta-row .title-text {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   display: inline-block;
   font-size: 32px;
-  color: #333;
+  color: #ECF0F1;
   margin-top: 20px;
   text-align: center;
 }
@@ -1648,7 +1648,7 @@ body .cta-section .cta-row .p-text {
   font-family: 'Lato', sans-serif;
   font-size: 30px;
   font-weight: 300;
-  color: #333;
+  color: #ECF0F1;
 }
 body .cta-section .cta-row .contact-text {
   font-family: 'Lato', sans-serif;
@@ -1656,7 +1656,7 @@ body .cta-section .cta-row .contact-text {
   white-space: nowrap;
   display: inline-block;
   font-size: 32px;
-  color: #ea2e49;
+  color: #EA2E49;
   text-align: center;
   margin-top: 16px;
   margin-bottom: 32px;
@@ -1708,13 +1708,21 @@ body .footer .copyright {
 }
 .landing p {
   display: inline-block;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
+  font-family: 'Great Vibes', serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   line-height: 40px;
   color: #fff;
-  font-size: 35px;
-  margin-top: 32px;
+  font-size: 45px;
+  margin-top: 52px;
+}
+.landing p b {
+  position: relative;
+  display: inline-block;
+  font-size: 22px;
+  margin-left: 20px;
+  margin-right: 20px;
+  top: -3px;
 }
 .landing .body {
   position: relative;
@@ -1732,7 +1740,9 @@ body .footer .copyright {
 }
 .landing .header-logo .logo-name {
   position: relative;
-  display: inline-block;
+  display: block;
+  margin: 0 auto;
+  max-width: 515px;
   margin-top: 56px;
   text-align: center;
   font-family: 'Lato', sans-serif;
@@ -1748,19 +1758,22 @@ body .footer .copyright {
 }
 .landing .header-logo .logo-name .hr {
   position: absolute;
+  width: 100%;
   margin-top: 10px;
+  left: 0;
 }
 .landing .header-logo .logo-name .hr hr {
   display: block;
   margin: 0 auto;
   padding: 0 auto;
-  width: 475px;
+  width: 92%;
   margin-top: 3px;
 }
 .landing .header-logo .twit {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-size: 28px;
+  font-size: 36px;
+  font-weight: 300;
   color: #fff;
   line-height: 32px;
   -webkit-transition: 0.2s ease-out;
@@ -1809,7 +1822,7 @@ body .footer .copyright {
   color: #fff;
 }
 .landing .recent-section {
-  background: url(../img/bg_sect_blur_bigger.jpg);
+  background: url(../img/new_imgs/pattern_new@2x.png);
   background-attachment: fixed;
 }
 .landing .recent-section .header-text {
