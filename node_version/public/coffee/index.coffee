@@ -9,8 +9,8 @@ $(document).ready $ ->
 	console.log origTitle + "    " + origURL
 	# INITIAL HISTORY PUSH
 	console.log "HEIght: " + $(window).height()
-	$('.page-overlay').css({'height': $(window).height()})
-	$('.container').css({'height': $(window).height()})
+	# $('.page-overlay').css({'height': $(window).height()})
+	# $('.container').css({'height': $(window).height()})
 	if origURL == '/'
 		$('.page-overlay').css({'top':$(window).height()})
 		# $('.container').css({'overflow':'hidden'})
@@ -35,12 +35,14 @@ $(document).ready $ ->
 			if (State.data.url == '/')
 				console.log "going in"
 				if loadedIndex
+					$('.page-overlay').css('position','fixed');
 					TweenLite.to $('.page-overlay'), 0.6,
 						top: $(window).height() , ease:"Power2.easeOut"
 				else
 					exec()
 			else if currURL == '/'
 				console.log("executing")
+				$('.page-overlay').css('position','absolute');
 				TweenLite.to $('.page-overlay'), 0.6,
 					top: 0 , ease:"Power2.easeOut"
 			else
@@ -85,12 +87,12 @@ $(document).ready $ ->
 	# $('.body').stellar
 	# 	horizontalScrolling: false, verticalOffset: 40, responsive: false, positionProperty: 'transform'
 
-	$('.container').scroll ->
-		# console.log "scroll"
+	$(window).scroll ->
+		console.log "scroll"
 		parallaxScroll()
  
 parallaxScroll = ->
-	scrolled = $('.container').scrollTop()
+	scrolled = $(window).scrollTop()
 	$('.landing .body').css('backgroundPosition', '0px '+(scrolled*-.25)+'px');
 	$('.landing .recent-section').css('backgroundPosition', '0px '+(scrolled*-.25)+'px');
 
@@ -113,6 +115,9 @@ getPage = (url) ->
 		#	TweenLite.to $('.page-overlay'), 0.3,
 		#		top: 0, ease:"Power4.easeOut"
 		if (url!='/_fetch')
+			$('.scroll-wrapper').css('overflow','hidden');
+			$('.page-overlay').css('position','absolute');
+			$(window).scrollTop(0);
 			TweenLite.to $('.page-overlay'), 0.6,
 				top: 0, ease:"Power2.easeOut"#, onComplete:callback
 			updateContent(data.data, url.charAt(1).toUpperCase() + url.slice(0,"_fetch".length*-1).slice(2), url.slice(0,"_fetch".length*-1))
@@ -127,6 +132,7 @@ updateContent = (data, title, url) ->
 		return
 	if url == '/'
 		$('.container').html(data)
+
 	else
 		$('.page-overlay').html(data)
 	History.pushState {

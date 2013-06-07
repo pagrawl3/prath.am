@@ -1230,26 +1230,24 @@
     width: 198px !important;
     height: 198px !important;
   }
-  .landing .logo-name .hr hr {
-    width: 330px !important;
-  }
 }
 .page-overlay {
-  position: fixed;
+  position: absolute;
   z-index: 20;
   top: 0;
   left: 0;
   width: 100%;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   background-color: #fff;
 }
 .landing {
   height: 100%;
-  overflow: hidden;
 }
 .container {
-  height: 100px;
-  overflow: scroll;
+  height: 100%;
+  overflow: visible;
+  -moz-overflow: scroll;
 }
 .temp-black {
   width: 100%
@@ -1725,9 +1723,24 @@ body .footer .copyright {
   top: -3px;
 }
 .landing .body {
-  position: relative;
   background: url(../img/new_imgs/new_hiBlur.jpg);
   background-attachment: fixed;
+}
+@media only screen and (max-width: 768px) {
+  .landing .body {
+    background: none;
+  }
+  .landing .body .bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: url(../img/new_imgs/new_hiBlur.jpg) 5%;
+    background-size: 400%;
+    background-attachment: fixed;
+    z-index: -1;
+  }
 }
 .landing .header-logo .logo {
   position: relative;
@@ -1780,6 +1793,11 @@ body .footer .copyright {
 }
 .landing .header-logo .twit:hover {
   color: #f6f792;
+}
+@media only screen and (max-width: 768px) {
+  .landing .header-logo .twit {
+    font-size: 25px !important;
+  }
 }
 .landing hr {
   position: relative;
