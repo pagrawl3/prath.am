@@ -73,7 +73,7 @@ $(document).ready $ ->
 	$('body').on 'click', '.menu_cta', ->
 		pageurl = $(this).attr('href')
 		# $('body').css background: '#000'
-		if browser!='Safari'
+		if browser!='Safari' && pageurl!='http://blog.prath.am'
 			loadedIndex = true
 			getPage(pageurl+'_fetch')
 			return false
@@ -90,7 +90,7 @@ $(document).ready $ ->
 	$(window).scroll ->
 		console.log "scroll"
 		parallaxScroll()
- 
+
 parallaxScroll = ->
 	scrolled = $(window).scrollTop()
 	$('.landing .body').css('backgroundPosition', '0px '+(scrolled*-.25)+'px');
